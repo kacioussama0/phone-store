@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "SFProDisplay";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../font/SFPRODISPLAYREGULAR.OTF") format("OTF");
+  }
+}
+
+@layer base {
+  html {
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
+      Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center w-full gap-4 px-6 py-3 text-gray-900 capitalize transition-all ease-in delay-100 bg-white border border-gray-900 rounded-lg h-fit;
+  }
+
+  .btn:hover {
+    @apply border text-fuchsia-600 border-fuchsia-600 bg-fuchsia-600/15;
+  }
+}
+
+@layer base {
+  .grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, auto);
+  }
+
+  .follow-mouse {
+    transition: all ease;
+  }
+}
+
+@layer components {
+  .phone-cards {
+    @apply w-full flex justify-center items-center p-4 text-[.75rem] font-semibold text-center uppercase border rounded-lg cursor-pointer hover:bg-slate-200 text-neutral-700 justify-items-center border-slate-400 focus:border focus:border-stone-700;
+  }
+  .phone-cards img {
+    @apply h-20 mb-4;
+  }
+}
+
+@layer components {
+  .card {
+    --background-checkbox: #86198f;
+    --text-headline: #000;
+    --card-height: 190px;
+    --card-width: 190px;
+    --card-radius: 12px;
+    --card-padding: 12px;
+    --header-height: 47px;
+    --transition: 0.15s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    border: 1px solid #eee;
+    overflow: hidden;
+    padding: var(--card-padding);
+    border-radius: var(--card-radius);
+  }
+
+  .card:hover {
+    background-color: #f1f5f9;
+    border: 1px solid #aeafaf;
+  }
+
+  .card__input {
+    position: absolute;
+    display: block;
+    outline: none;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    -webkit-appearance: none;
+  }
+  .card__input:checked ~ .card__body {
+    --shadow: 0 0 0 3px var(--card-shadow);
+  }
+  .card__input:checked ~ .card__body .card__body-cover-checkbox {
+    --check-bg: var(--background-checkbox);
+    --check-border: #fff;
+    --check-scale: 1;
+    --check-opacity: 1;
+  }
+  .card__input:checked ~ .card__body .card__body-cover-checkbox--svg {
+    --stroke-color: #fff;
+    --stroke-dashoffset: 0;
+  }
+
+  .card__input:disabled ~ .card__body {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  .card__input:disabled ~ .card__body:active {
+    --scale: 1;
+  }
+  .card__body {
+    display: grid;
+    grid-auto-rows: calc(var(--card-height) - var(--header-height)) auto;
+    background: var(--background);
+    height: var(--card-height);
+    width: var(--card-width);
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: var(--shadow, 0 4px 4px 0 rgba(0, 0, 0, 0.02));
+    transition: transform var(--transition), box-shadow var(--transition);
+    transform: scale(var(--scale, 1)) translateZ(0);
+  }
+  .card__body:active {
+    --scale: 0.96;
+  }
+  .card__body-cover {
+    --c-border: var(--card-radius) var(--card-radius) 0 0;
+    --c-width: 100%;
+    --c-height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card__body-cover-checkbox {
+    background: var(--check-bg, var(--background-checkbox));
+    border: 2px solid var(--check-border, #fff);
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 1;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    opacity: var(--check-opacity, 0);
+    transition: transform var(--transition),
+      opacity calc(var(--transition) * 1.2) linear;
+    transform: scale(var(--check-scale, 0));
+  }
+  .card__body-cover-checkbox--svg {
+    width: 13px;
+    height: 11px;
+    display: inline-block;
+    vertical-align: top;
+    fill: none;
+    margin: 7px 0 0 5px;
+    stroke: var(--stroke-color, #fff);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 16px;
+    stroke-dashoffset: var(--stroke-dashoffset, 16px);
+    transition: stroke-dashoffset 0.4s ease var(--transition);
+  }
+  .card__body-header {
+    height: var(--header-height);
+    background: var(--background);
+    text-align: center;
+  }
+  .card__body-header-title {
+    color: var(--text-headline);
+    font-weight: 700;
+  }
+}
+
+#calendar::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+}
+
+#calendar::-webkit-scrollbar {
+  width: 4px;
+  background-color: #fff;
+}
+
+#calendar::-webkit-scrollbar-thumb {
+  background-color: #86198f;
+  width: 2px;
+}
+
+.date-card {
+  @apply flex flex-col items-center justify-center text-center border rounded-lg cursor-pointer min-w-48 min-h-28 text-neutral-600 border-slate-400;
+}
+
+.date-card .today {
+  @apply px-3 py-1.5 bg-fuchsia-800 text-white w-fit rounded-lg;
+}
+
+#timeAppointment {
+  @apply grid items-center justify-center w-full grid-cols-1 gap-5 md:grid-cols-4;
+}
+
+.time-card {
+  @apply flex flex-col items-center justify-center py-6 text-center border rounded-lg cursor-pointer min-w-fit min-h-fit text-neutral-600 border-slate-400;
+}
+
+.time-input {
+  @apply hidden;
+}
+
+.time-input:checked + .time-card {
+  @apply border border-fuchsia-800;
+}
+
+@layer components {
+  .input-field {
+    @apply px-4 py-4 transition-colors ease-linear border rounded-lg placeholder:text-sm placeholder:md:text-base min-w-fit border-slate-300 hover:border hover:border-black hover:placeholder:text-black;
+  }
+  .input-field[type="number"]::-webkit-outer-spin-button,
+  .input-field[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .input-field ~ .error-massage {
+    @apply mt-2 text-base text-red-500;
+  }
+}
+
+.valid-input {
+  @apply border-2 border-emerald-500 hover:border-2 focus-within:border-2 focus-within:border-emerald-500 hover:border-emerald-500 focus:border-2 focus:border-emerald-500;
+}
+.invalid-input {
+  @apply border-2 border-red-500 hover:border-2 hover:border-red-500 focus-within:border-2 focus-within:border-red-500 focus:border-2 focus:border-red-500;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  @apply text-black;
+}
+
+.swiper-pagination-bullet {
+  @apply bg-fuchsia-300;
+}
+.swiper-pagination-bullet + .swiper-pagination-bullet-active {
+  @apply bg-fuchsia-800;
+}
