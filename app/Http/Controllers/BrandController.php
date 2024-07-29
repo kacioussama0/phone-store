@@ -12,23 +12,35 @@ class BrandController extends Controller
      */
     public function index()
     {
-        //
+        $brands = Brand::orderBy('updated_at','DESC')->paginate(16);
+        return view('admin.brands.index',compact('brands'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
      */
+
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'slug' => 'required|unique:brands|max:255',
+            'description' => 'nullable|max:255',
+            'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'enabled' => 'nullable'
+        ]);
+
+        if($request->hasFile('thumbnail')){
+            $validatedData['thumbnail'] = $request->file('thumbnail')->store('images/brands');
+        }
+
+        if(Brand::create($validatedData)) {
+            return redirect()->route('brands.index')->with('success','Marque créée avec succès.');
+        }
+
+        abort(500);
+
     }
 
     /**
@@ -44,7 +56,7 @@ class BrandController extends Controller
      */
     public function edit(Brand $brand)
     {
-        //
+        return view('admin.brands.edit',compact('brand'));
     }
 
     /**
@@ -52,7 +64,23 @@ class BrandController extends Controller
      */
     public function update(Request $request, Brand $brand)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'slug' => 'required|max:255|unique:brands,slug,' . $brand->id,
+            'description' => 'nullable|max:255',
+            'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'enabled' => 'nullable'
+        ]);
+
+        if($request->hasFile('thumbnail')){
+            $validatedData['thumbnail'] = $request->file('thumbnail')->store('images/brands');
+        }
+
+        if($brand->update($validatedData)) {
+            return redirect()->route('brands.index')->with('success','Marque Editer avec succès.');
+        }
+
+        abort(500);
     }
 
     /**
@@ -60,6 +88,9 @@ class BrandController extends Controller
      */
     public function destroy(Brand $brand)
     {
-        //
+        if($brand->delete()) {
+            return redirect()->route('brands.index')->with('success','Marque Supprimer avec succès.');
+        }
+        abort(500);
     }
 }

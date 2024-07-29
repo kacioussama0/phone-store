@@ -1,6 +1,6 @@
 @php
     $html_tag_data = [];
-    $title = 'Editer Une Marque';
+    $title = 'Editer Une Appareil';
     $description= 'Ecommerce Product List Page'
 @endphp
 @extends('layout',['html_tag_data'=>$html_tag_data, 'title'=>$title, 'description'=>$description])
@@ -35,30 +35,41 @@
             <!-- Title and Top Buttons End -->
 
 
-
             <div class="row my-5">
 
                 <div class="col-xl-4">
                     <div class="mb-5">
                         <x-alert />
-                        <h2 class="small-title">Editer Une Marque</h2>
+                        <h2 class="small-">Editer Une Appareil</h2>
                         <div class="card">
                             <div class="card-body">
-                                <form method="POST" action="{{route('brands.update',$brand)}}" enctype="multipart/form-data">
+                                <form method="POST" action="{{route('devices.update',$device)}}" enctype="multipart/form-data">
 
                                     @csrf
                                     @method('PUT')
 
-                                    <x-c-input type="text" label="Nom : " name="name" id="name" value="{{$brand->name}}"/>
-                                    <x-c-input type="text" label="Slogan : " name="slug" id="slug" value="{{$brand->slug}}"/>
-                                    <x-c-input type="text" label="Description : " name="description" id="description" value="{{$brand->description}}"/>
+                                    <x-c-input type="text" label="Nom : " name="name" id="name" value="{{$device->name}}"/>
+                                    <x-c-input type="text" label="Slogan : " name="slug" id="slug" value="{{$device->slug}}"/>
+                                    <x-c-input type="text" label="Description : " name="description" id="description" value="{{$device->description}}"/>
 
-                                    <img src="{{asset('storage/' . $brand->thumbnail)}}" alt="Logo-{{$brand->name}}">
+                                    <img src="{{$device->thumbnail}}" alt="{{$device->brand->name . '-' . $device->name}}">
 
-                                    <x-c-input type="file" label="Image : " name="thumbnail" id="thumbnail" value="{{old('thumbnail')}}"/>
+                                    <x-c-input type="file" label="Image : " name="thumbnail" id="thumbnail" value="{{$device->thumbnail}}"/>
+
+                                    <div class="mb-3">
+                                        <label for="brand_id" class="form-label">
+                                            Marque:
+                                        </label>
+                                        <select name="brand_id" id="brand_id" class="form-select w-100">
+                                            @foreach($brands as $brand)
+                                                <option value="{{$brand->id}}" @selected($brand->id == $device->brand_id)>{{$brand->name}}</option>
+                                            @endforeach
+                                        </select>
+
+                                    </div>
 
                                     <div class="form-check mb-3">
-                                        <input class="form-check-input" type="checkbox" @checked($brand->enabled) value="1" name="enabled" id="enabled">
+                                        <input class="form-check-input" type="checkbox" @checked($device->enabled) value="1" name="enabled" id="enabled">
                                         <label class="form-check-label" for="enabled">
                                             Active
                                         </label>
@@ -68,16 +79,13 @@
                                         <i data-acorn-icon="save"></i>
                                         <span>Valider</span>
                                     </button>
+
                                 </form>
                             </div>
 
                         </div>
                     </div>
                 </div>
-
             </div>
-
-
-
         </div>
 @endsection
