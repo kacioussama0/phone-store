@@ -104,7 +104,7 @@
                             <td>{{$brand->name}}</td>
                             <td>{{$brand->slug}}</td>
                             <td>
-                                <img src="{{$brand->thumbnail}}" width="30" alt="Logo-{{$brand->name}}">
+                                <img src="{{asset('storage/' . $brand->thumbnail)}}" width="30" alt="Logo-{{$brand->name}}">
                             </td>
 
                             <td>{{$brand->enabled ? "Oui" : "No"}}</td>

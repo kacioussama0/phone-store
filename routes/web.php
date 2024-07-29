@@ -8,6 +8,8 @@ Route::view('/','index');
 Route::prefix('appointments')->group(function () {
 
     Route::get('/brand-type',[App\Http\Controllers\SiteController::class,'brandType']);
+    Route::get('/brand-type/{brandId}',[App\Http\Controllers\SiteController::class,'deviceType']);
+    Route::get('/brand-type/{brandId}/device-type/{typeId}',[App\Http\Controllers\SiteController::class,'deviceModel']);
 
 });
 
@@ -54,4 +56,8 @@ Route::prefix('Settings')->group(function () {
 Route::prefix('admin')->group(function () {
    Route::resource('brands', \App\Http\Controllers\BrandController::class);
    Route::resource('devices', \App\Http\Controllers\DeviceController::class);
+   Route::resource('types', \App\Http\Controllers\TypeController::class);
 });
+
+
+//Route::get('devices/download-images', [\App\Http\Controllers\DeviceController::class, 'downloadDevicesImage']);

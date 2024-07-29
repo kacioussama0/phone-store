@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('type_devices', function (Blueprint $table) {
-            $table->unsignedBigInteger('type_id');
-            $table->unsignedBigInteger('device_id');
-            $table->primary(['type_id', 'device_id']);
+        Schema::table('devices', function (Blueprint $table) {
+            $table->unsignedBigInteger('type_id')->nullable()->after('thumbnail');
             $table->foreign('type_id')->references('id')->on('types');
-            $table->foreign('device_id')->references('id')->on('devices');
         });
     }
 
@@ -25,6 +22,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('type_devices');
+        Schema::table('devices', function (Blueprint $table) {
+            $table->dropForeign('devices_type_id_foreign');
+            $table->dropColumn('type_id');
+        });
     }
 };

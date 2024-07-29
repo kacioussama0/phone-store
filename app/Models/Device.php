@@ -19,9 +19,14 @@ class Device extends Model
         return $this->belongsTo(Brand::class);
     }
 
-    public function types()
-    {
-        return $this->belongsToMany(Type::class,'type_devices');
+    public function device_type(){
+        return $this->belongsTo(Type::class,'type_id');
     }
+
+
+   public function getTypeAttribute() {
+        return $this->device_type->name;
+    }
+
 
 }

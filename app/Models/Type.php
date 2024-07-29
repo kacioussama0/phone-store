@@ -11,10 +11,11 @@ class Type extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $guarded = ['id'];
 
     public function devices()
     {
-        return $this->belongsToMany(Device::class,'type_devices');
+        return $this->hasMany(Device::class);
     }
 
 }

@@ -24,12 +24,12 @@
             @foreach($brands as $brand)
                 <div class="phone-cards">
                     <a
-                        href="#"
+                        href="{{url('appointments/brand-type/' . $brand->id)}}"
                         aria-label=""
                         title=""
                     >
                         <img
-                            src="{{$brand->thumbnail}}"
+                            src="{{asset('storage/' . $brand->thumbnail)}}"
                             alt="{{"Image " . $brand->name}}"
                         />
                         <span>{{$brand->name}}</span>

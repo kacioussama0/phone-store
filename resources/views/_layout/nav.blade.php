@@ -10,6 +10,15 @@
                 ]
             ],
 
+              [
+                "name" => "Type Appareils",
+                "icon" => "home-garage",
+                "link" => "/admin/types",
+                "childrens" => [
+
+                ]
+            ],
+
              [
                 "name" => "Appareils",
                 "icon" => "home-garage",
@@ -18,6 +27,8 @@
 
                 ]
             ],
+
+
     ];
 
 @endphp

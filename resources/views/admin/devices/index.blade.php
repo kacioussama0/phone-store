@@ -113,6 +113,7 @@
                     <td>Slogan</td>
                     <td>Image</td>
                     <td>Marque</td>
+                    <td>Type</td>
                     <td>Active</td>
                     <td>Action</td>
                 </tr>
@@ -128,10 +129,11 @@
                             <td>{{$device->slug}}</td>
 
                             <td>
-                                <img src="{{$device->thumbnail}}" width="30" alt="Logo-{{$device->name}}">
+                                <img src="{{asset('storage/' . $device->thumbnail)}}" width="30" alt="Logo-{{$device->name}}">
                             </td>
 
                             <td>{{$device->brand->name}}</td>
+                            <td>{{$device->device_type->name ?? "Vide"}}</td>
                             <td>{{$device->enabled ? "Oui" : "No"}}</td>
 
                             <td>

@@ -12,7 +12,8 @@ class TypeController extends Controller
      */
     public function index()
     {
-        //
+       $types = Type::paginate(16);
+       return view('admin.types.index', compact('types'));
     }
 
     /**
@@ -28,7 +29,23 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'slug' => 'required|unique:brands|max:255',
+            'description' => 'nullable|max:255',
+            'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'enabled' => 'nullable'
+        ]);
+
+        if($request->hasFile('thumbnail')){
+            $validatedData['thumbnail'] = $request->file('thumbnail')->store('images/types','public');
+        }
+
+        if(Type::create($validatedData)) {
+            return redirect()->route('types.index')->with('success','Type créée avec succès.');
+        }
+
+        abort(500);
     }
 
     /**
@@ -44,7 +61,7 @@ class TypeController extends Controller
      */
     public function edit(Type $type)
     {
-        //
+        return view('admin.types.edit', compact('type'));
     }
 
     /**
@@ -52,7 +69,23 @@ class TypeController extends Controller
      */
     public function update(Request $request, Type $type)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'slug' => 'required|unique:brands|max:255',
+            'description' => 'nullable|max:255',
+            'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'enabled' => 'nullable'
+        ]);
+
+        if($request->hasFile('thumbnail')){
+            $validatedData['thumbnail'] = $request->file('thumbnail')->store('images/types','public');
+        }
+
+        if($type->update($validatedData)) {
+            return redirect()->route('types.index')->with('success','Type Editer avec succès.');
+        }
+
+        abort(500);
     }
 
     /**
@@ -60,6 +93,9 @@ class TypeController extends Controller
      */
     public function destroy(Type $type)
     {
-        //
+        if($type->delete()) {
+            return redirect()->route('types.index')->with('success','Type Supprimer avec succès.');
+        }
+        abort(500);
     }
 }

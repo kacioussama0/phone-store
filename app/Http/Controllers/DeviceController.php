@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Brand;
 use App\Models\Device;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 
 class DeviceController extends Controller
 {
@@ -42,7 +44,7 @@ class DeviceController extends Controller
 
 
         if($request->hasFile('thumbnail')){
-            $validatedData['thumbnail'] = $request->file('thumbnail')->store('images/devices');
+            $validatedData['thumbnail'] = $request->file('thumbnail')->store('images/devices','public');
         }
 
         if(Device::create($validatedData)) {
@@ -85,7 +87,7 @@ class DeviceController extends Controller
 
 
         if($request->hasFile('thumbnail')){
-            $validatedData['thumbnail'] = $request->file('thumbnail')->store('images/devices');
+            $validatedData['thumbnail'] = $request->file('thumbnail')->store('images/devices','public');
         }
 
         if($device->update($validatedData)) {
@@ -103,6 +105,43 @@ class DeviceController extends Controller
         if($device->delete()) {
             return redirect()->route('devices.index')->with('success','Appareil supprimer avec succès.');
         }
+    }
+
+
+    public function downloadDevicesImage()
+    {
+        $devices = Device::all()->skip(1);
+
+        echo $devices->count() . "<br>";
+
+        foreach ($devices as $device) {
+
+            $brand = $device->brand->name;
+            $url = $device->thumbnail;
+            echo "$brand $url <br>";
+
+            $response = Http::get($url);
+
+            if ($response->successful()) {
+
+                $name = basename($url);
+                $contents = $response->body();
+                $uploadedPath = 'images/' . strtolower($brand) . '/' . $name;
+                // Store the file in the 'public' disk
+                Storage::disk('public')->put( $uploadedPath , $contents);
+
+                $device->update(['thumbnail' => $uploadedPath]);
+
+                echo "File downloaded successfully";
+
+            } else {
+                echo "Failed to download file";
+            }
+
+        }
+
+        echo "downloaded All";
+
     }
 
 }

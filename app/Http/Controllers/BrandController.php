@@ -32,7 +32,7 @@ class BrandController extends Controller
         ]);
 
         if($request->hasFile('thumbnail')){
-            $validatedData['thumbnail'] = $request->file('thumbnail')->store('images/brands');
+            $validatedData['thumbnail'] = $request->file('thumbnail')->store('images/brands','public');
         }
 
         if(Brand::create($validatedData)) {
@@ -73,7 +73,7 @@ class BrandController extends Controller
         ]);
 
         if($request->hasFile('thumbnail')){
-            $validatedData['thumbnail'] = $request->file('thumbnail')->store('images/brands');
+            $validatedData['thumbnail'] = $request->file('thumbnail')->store('images/brands','public');
         }
 
         if($brand->update($validatedData)) {
