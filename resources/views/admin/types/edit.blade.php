@@ -53,9 +53,9 @@
                                     <x-c-input type="text" label="Slogan : " name="slug" id="slug" value="{{$type->slug}}"/>
                                     <x-c-input type="text" label="Description : " name="description" id="description" value="{{$type->description}}"/>
 
-                                    <div class="row w-100 align-self-center flex-wrap mb-3">
-                                       <x-c-input  type="file" label="Image : " name="thumbnail" id="thumbnail" value="{{old('thumbnail')}}"/>
-                                       <div class=" px-2 col-6 border rounded-md">
+                                    <div class=" w-100  align-self-center mb-3">
+                                       <x-c-input class="col-4" type="file" label="Image : " name="thumbnail" id="thumbnail" value="{{old('thumbnail')}}"/>
+                                       <div class="col-2 d-flex justify-content-center align-self-center px-2 w-fit border rounded-md">
                                            <img  width="100" src="{{asset('storage/' . $type->thumbnail)}}" alt="Logo-{{$type->name}}">
                                        </div>
                                     </div>

@@ -40,7 +40,7 @@
                 <div class="col-xl-4">
                     <div class="mb-5">
                         <x-alert />
-                        <h2 class="small-">Editer Une Appareil</h2>
+                        <h2 class="small-title">Editer Une Appareil</h2>
                         <div class="card">
                             <div class="card-body">
                                 <form method="POST" action="{{route('devices.update',$device)}}" enctype="multipart/form-data">
@@ -52,9 +52,9 @@
                                     <x-c-input type="text" label="Slogan : " name="slug" id="slug" value="{{$device->slug}}"/>
                                     <x-c-input type="text" label="Description : " name="description" id="description" value="{{$device->description}}"/>
 
-                                    <img src="{{$device->thumbnail}}" alt="{{$device->brand->name . '-' . $device->name}}">
-
-                                    <x-c-input type="file" label="Image : " name="thumbnail" id="thumbnail" value="{{$device->thumbnail}}"/>
+                                    
+                                    <x-c-input  type="file" label="Image : " name="thumbnail" id="thumbnail" value="{{$device->thumbnail}}"/>
+                                    <img class="mb-3" src="{{asset('storage/' . $device->thumbnail)}}" width="100" alt="{{$device->brand->name . '-' . $device->name}}">
 
                                     <div class="mb-3">
                                         <label for="brand_id" class="form-label">
