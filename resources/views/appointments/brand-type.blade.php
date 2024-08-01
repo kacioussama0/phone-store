@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <section class="container mt-16 grid items-start px-4 mx-auto md:h-[80dvh]">
+    <section class="container mt-16 grid items-start px-4 mx-auto ">
         <div class="self-end mx-auto mb-12 space-y-8 text-center">
             <h1 class="text-2xl font-bold md:text-4xl">
                 Quel est le brand de votre appareil ?
@@ -16,7 +16,7 @@
             </p>
         </div>
         <div
-            class="grid items-center grid-cols-2 gap-4 mt-6 sm:grid-cols-3 md:grid-cols-4"
+            class="grid items-center grid-cols-2 gap-4 mt-6 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5"
         >
 
 
@@ -31,7 +31,8 @@
                         <img
                             src="{{asset('storage/' . $brand->thumbnail)}}"
                             alt="{{"Image " . $brand->name}}"
-                        />
+                            aria-label="{{"Image " . $brand->name}}"
+                            />
                         <span>{{$brand->name}}</span>
                     </a>
                 </div>

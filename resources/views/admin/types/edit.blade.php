@@ -53,9 +53,12 @@
                                     <x-c-input type="text" label="Slogan : " name="slug" id="slug" value="{{$type->slug}}"/>
                                     <x-c-input type="text" label="Description : " name="description" id="description" value="{{$type->description}}"/>
 
-                                    <img src="{{asset('storage/' . $type->thumbnail)}}" alt="Logo-{{$type->name}}">
-
-                                    <x-c-input type="file" label="Image : " name="thumbnail" id="thumbnail" value="{{old('thumbnail')}}"/>
+                                    <div class="row w-100 align-self-center flex-wrap mb-3">
+                                       <x-c-input  type="file" label="Image : " name="thumbnail" id="thumbnail" value="{{old('thumbnail')}}"/>
+                                       <div class=" px-2 col-6 border rounded-md">
+                                           <img  width="100" src="{{asset('storage/' . $type->thumbnail)}}" alt="Logo-{{$type->name}}">
+                                       </div>
+                                    </div>
 
 {{--                                    <div class="form-check mb-3">--}}
 {{--                                        <input class="form-check-input" type="checkbox" @checked($type->enabled) value="1" name="enabled" id="enabled">--}}

@@ -86,9 +86,9 @@
 
                 <tr>
                     <td>ID</td>
+                    <td>Image</td>
                     <td>Nom</td>
                     <td>Slogan</td>
-                    <td>Image</td>
                     <td>Action</td>
                 </tr>
 
@@ -100,17 +100,17 @@
 
                         <tr>
                             <td>{{$type->id}}</td>
-                            <td>{{$type->name}}</td>
-                            <td>{{$type->slug}}</td>
                             <td>
                                 <img src="{{asset('storage/' . $type->thumbnail)}}" width="30" alt="Logo-{{$type->name}}">
                             </td>
+                            <td>{{$type->name}}</td>
+                            <td>{{$type->slug}}</td>
 
 
                             <td>
-                                <div class="btn-group" role="group" aria-label="Basic example">
-                                    <a href="{{route('types.edit',$type->id)}}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
-                                    <button type="submit" form="delete-type-{{$type->id}}" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
+                                <div class="btn-group gap-1" role="group" aria-label="Basic example">
+                                    <a href="{{route('types.edit',$type->id)}}" class="btn rounded-sm btn-secondary"><i class="bi bi-pencil-square"></i></a>
+                                    <button type="submit" form="delete-type-{{$type->id}}" class="btn rounded-sm btn-primary"><i class="bi bi-trash-fill"></i></button>
                                 </div>
 
                                 <form action="{{route('types.destroy',$type->id)}}" id="delete-type-{{$type->id}}"  method="POST" onsubmit="return confirm('es-tu sûr ?')">

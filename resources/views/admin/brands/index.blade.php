@@ -86,9 +86,9 @@
 
                 <tr>
                     <td>ID</td>
+                    <td>Image</td>
                     <td>Nom</td>
                     <td>Slogan</td>
-                    <td>Image</td>
                     <td>Active</td>
                     <td>Action</td>
                 </tr>
@@ -101,18 +101,18 @@
 
                         <tr>
                             <td>{{$brand->id}}</td>
-                            <td>{{$brand->name}}</td>
-                            <td>{{$brand->slug}}</td>
                             <td>
                                 <img src="{{asset('storage/' . $brand->thumbnail)}}" width="30" alt="Logo-{{$brand->name}}">
                             </td>
+                            <td>{{$brand->name}}</td>
+                            <td>{{$brand->slug}}</td>
 
                             <td>{{$brand->enabled ? "Oui" : "No"}}</td>
 
                             <td>
-                                <div class="btn-group" role="group" aria-label="Basic example">
-                                    <a href="{{route('brands.edit',$brand->id)}}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
-                                    <button type="submit" form="delete-brand-{{$brand->id}}" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
+                                <div class="btn-group gap-1" role="group" aria-label="Basic example">
+                                    <a href="{{route('brands.edit',$brand->id)}}" class="btn rounded-sm btn-secondary"><i class="bi bi-pencil-square"></i></a>
+                                    <button type="submit" form="delete-brand-{{$brand->id}}" class="btn rounded-sm btn-primary"><i class="bi bi-trash-fill"></i></button>
                                 </div>
 
                                 <form action="{{route('brands.destroy',$brand->id)}}" id="delete-brand-{{$brand->id}}"  method="POST" onsubmit="return confirm('es-tu sûr ?')">
