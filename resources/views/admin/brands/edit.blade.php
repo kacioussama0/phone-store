@@ -53,11 +53,11 @@
                                     <x-c-input type="text" label="Slogan : " name="slug" id="slug" value="{{$brand->slug}}"/>
                                     <x-c-input type="text" label="Description : " name="description" id="description" value="{{$brand->description}}"/>
 
+                                    
+                                    <x-c-input type="file" label="Image : " name="thumbnail" id="thumbnail" value="{{old('thumbnail')}}"/>
                                     <img src="{{asset('storage/' . $brand->thumbnail)}}" alt="Logo-{{$brand->name}}">
 
-                                    <x-c-input type="file" label="Image : " name="thumbnail" id="thumbnail" value="{{old('thumbnail')}}"/>
-
-                                    <div class="form-check mb-3">
+                                    <div class="form-check mt-3 mb-3">
                                         <input class="form-check-input" type="checkbox" @checked($brand->enabled) value="1" name="enabled" id="enabled">
                                         <label class="form-check-label" for="enabled">
                                             Active

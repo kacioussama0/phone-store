@@ -1,7 +1,7 @@
 @php
     $html_tag_data = [];
-    $title = 'List des Marques';
-    $description= 'Ecommerce Product List Page'
+    $title = 'List des Rendez-vous';
+    $description= ''
 @endphp
 @extends('layout',['html_tag_data'=>$html_tag_data, 'title'=>$title, 'description'=>$description])
 
@@ -41,10 +41,10 @@
            <div class="col-xl-4">
                <div class="mb-5">
                    <x-alert />
-                   <h2 class="small-title">Ajout Un Marque</h2>
-                   <div class="card">
+                   <h2 class="small-title">Ajout Un Type</h2>
+                   <!-- <div class="card">
                        <div class="card-body">
-                           <form method="POST" action="{{route('brands.store')}}" enctype="multipart/form-data">
+                           <form method="POST" action="{{route('types.store')}}" enctype="multipart/form-data">
 
                                @csrf
 
@@ -53,12 +53,12 @@
                                <x-c-input type="text" label="Description : " name="description" id="description" value="{{old('description')}}"/>
                                <x-c-input type="file" label="Image : " name="thumbnail" id="thumbnail" value="{{old('thumbnail')}}"/>
 
-                               <div class="form-check mb-3">
-                                   <input class="form-check-input" type="checkbox" @checked(old('enabled')) value="1" name="enabled" id="enabled">
-                                   <label class="form-check-label" for="enabled">
-                                       Active
-                                   </label>
-                               </div>
+{{--                               <div class="form-check mb-3">--}}
+{{--                                   <input class="form-check-input" type="checkbox" @checked(old('enabled')) value="1" name="enabled" id="enabled">--}}
+{{--                                   <label class="form-check-label" for="enabled">--}}
+{{--                                       Active--}}
+{{--                                   </label>--}}
+{{--                               </div>--}}
 
                                <button type="submit"  class="btn btn-outline-primary btn-icon btn-icon-start">
                                    <i data-acorn-icon="save"></i>
@@ -68,7 +68,7 @@
                            </form>
                        </div>
 
-                   </div>
+                   </div> -->
                </div>
            </div>
 
@@ -89,7 +89,6 @@
                     <td>Image</td>
                     <td>Nom</td>
                     <td>Slogan</td>
-                    <td>Active</td>
                     <td>Action</td>
                 </tr>
 
@@ -97,25 +96,24 @@
 
                 <tbody>
 
-                    @foreach($brands as $brand)
+                    @foreach($appointments as $appointment)
 
                         <tr>
-                            <td>{{$brand->id}}</td>
+                            <td>{{$appointment->id}}</td>
                             <td>
-                                <img src="{{asset('storage/' . $brand->thumbnail)}}" width="30" alt="Logo-{{$brand->name}}">
+                                <img src="{{asset('storage/' . $appointment->thumbnail)}}" width="30" alt="Logo-{{$appointment->name}}">
                             </td>
-                            <td>{{$brand->name}}</td>
-                            <td>{{$brand->slug}}</td>
+                            <td>{{$appointment->name}}</td>
+                            <td>{{$appointment->slug}}</td>
 
-                            <td>{{$brand->enabled ? "Oui" : "No"}}</td>
 
                             <td>
                                 <div class="btn-group gap-1" role="group" aria-label="Basic example">
-                                    <a href="{{route('brands.edit',$brand->id)}}" class="btn rounded-sm btn-secondary"><i class="bi bi-pencil-square"></i></a>
-                                    <button type="submit" form="delete-brand-{{$brand->id}}" class="btn rounded-sm btn-primary"><i class="bi bi-trash-fill"></i></button>
+                                    <a href="{{route('types.edit',$appointment->id)}}" class="btn rounded-sm btn-secondary"><i class="bi bi-pencil-square"></i></a>
+                                    <button type="submit" form="delete-type-{{$appointment->id}}" class="btn rounded-sm btn-primary"><i class="bi bi-trash-fill"></i></button>
                                 </div>
 
-                                <form action="{{route('brands.destroy',$brand->id)}}" id="delete-brand-{{$brand->id}}"  method="POST" onsubmit="return confirm('es-tu sûr ?')">
+                                <form action="{{route('types.destroy',$appointment->id)}}" id="delete-type-{{$appointment->id}}"  method="POST" onsubmit="return confirm('es-tu sûr ?')">
                                     @csrf
                                     @method('DELETE')
                                 </form>
@@ -127,7 +125,7 @@
             </tbody>
             </table>
 
-            {{$brands->links()}}
+            {{$appointments->links()}}
 
         </div>
 

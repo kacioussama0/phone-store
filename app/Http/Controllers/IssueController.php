@@ -12,7 +12,8 @@ class IssueController extends Controller
      */
     public function index()
     {
-        //
+           $issues = Issue::paginate(16);
+       return view('admin.issues.index', compact('issues'));
     }
 
     /**

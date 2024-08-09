@@ -2,8 +2,16 @@
 
     $navLists = [
             [
+                "name" => "Dashboard",
+                "icon" => "home",
+                "link" => "/Dashboard",
+                "childrens" => [
+
+                ]
+            ],
+            [
                 "name" => "Marques",
-                "icon" => "home-garage",
+                "icon" => "palette",
                 "link" => "/admin/brands",
                 "childrens" => [
 
@@ -12,7 +20,7 @@
 
               [
                 "name" => "Type Appareils",
-                "icon" => "home-garage",
+                "icon" => "mobile",
                 "link" => "/admin/types",
                 "childrens" => [
 
@@ -21,8 +29,24 @@
 
              [
                 "name" => "Appareils",
-                "icon" => "home-garage",
+                "icon" => "tablet",
                 "link" => "/admin/devices",
+                "childrens" => [
+
+                ]
+            ],
+             [
+                "name" => "panne",
+                "icon" => "warning-hexagon",
+                "link" => "/admin/issues",
+                "childrens" => [
+
+                ]
+            ],
+             [
+                "name" => "rendez-vous",
+                "icon" => "calendar",
+                "link" => "/admin/Appointments",
                 "childrens" => [
 
                 ]

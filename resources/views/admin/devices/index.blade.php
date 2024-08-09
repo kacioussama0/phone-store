@@ -104,16 +104,16 @@
 
             <!-- Start Table -->
 
-        <div class="table-responsive">
+        <div class="table-responsive mt-6">
             <table class="table table-striped align-middle text-center">
             <thead>
 
                 <tr>
+                    <td>Image</td>
+                    <td>Type</td>
                     <td>Nom</td>
                     <td>Slogan</td>
-                    <td>Image</td>
                     <td>Marque</td>
-                    <td>Type</td>
                     <td>Active</td>
                     <td>Action</td>
                 </tr>
@@ -125,21 +125,21 @@
                     @foreach($devices as $device)
 
                         <tr>
-                            <td>{{$device->name}}</td>
-                            <td>{{$device->slug}}</td>
-
                             <td>
                                 <img src="{{asset('storage/' . $device->thumbnail)}}" width="30" alt="Logo-{{$device->name}}">
                             </td>
-
                             <td>{{$device->brand->name}}</td>
+                            <td>{{$device->name}}</td>
+                            <td>{{$device->slug}}</td>
+
+
                             <td>{{$device->device_type->name ?? "Vide"}}</td>
                             <td>{{$device->enabled ? "Oui" : "No"}}</td>
 
                             <td>
-                                <div class="btn-group" role="group" aria-label="Basic example">
-                                    <a href="{{route('devices.edit',$device->id)}}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
-                                    <button type="submit" form="delete-device-{{$device->id}}" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
+                                <div class="btn-group gap-1 " role="group" aria-label="Basic example">
+                                    <a href="{{route('devices.edit',$device->id)}}" class="btn rounded-sm btn-secondary"><i class="bi bi-pencil-square"></i></a>
+                                    <button type="submit" form="delete-device-{{$device->id}}" class="btn rounded-sm btn-primary"><i class="bi bi-trash-fill"></i></button>
                                 </div>
 
                                 <form action="{{route('devices.destroy',$device->id)}}" id="delete-device-{{$device->id}}"  method="POST" onsubmit="return confirm('es-tu sûr ?')">

@@ -57,6 +57,8 @@ Route::prefix('admin')->group(function () {
    Route::resource('brands', \App\Http\Controllers\BrandController::class);
    Route::resource('devices', \App\Http\Controllers\DeviceController::class);
    Route::resource('types', \App\Http\Controllers\TypeController::class);
+   Route::resource('issues', \App\Http\Controllers\IssueController::class);
+   Route::resource('appointments', \App\Http\Controllers\AppointmentController::class);
 });
 
 
