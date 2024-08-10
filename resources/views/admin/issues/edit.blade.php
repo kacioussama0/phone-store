@@ -41,22 +41,22 @@
                 <div class="col-xl-4">
                     <div class="mb-5">
                         <x-alert />
-                        <h2 class="small-title">Editer Une Marque</h2>
+                        <h2 class="small-title">Editer Une Panne</h2>
                         <div class="card">
                             <div class="card-body">
-                                <form method="POST" action="{{route('types.update',$type)}}" enctype="multipart/form-data">
+                                <form method="POST" action="{{route('issues.update',$issue)}}" enctype="multipart/form-data">
 
                                     @csrf
                                     @method('PUT')
 
-                                    <x-c-input type="text" label="Nom : " name="name" id="name" value="{{$type->name}}"/>
-                                    <x-c-input type="text" label="Slogan : " name="slug" id="slug" value="{{$type->slug}}"/>
-                                    <x-c-input type="text" label="Description : " name="description" id="description" value="{{$type->description}}"/>
+                                    <x-c-input type="text" label="Nom : " name="name" id="name" value="{{$issue->name}}"/>
+                                    <x-c-input type="text" label="Slogan : " name="slug" id="slug" value="{{$issue->slug}}"/>
+                                    <x-c-input type="text" label="Description : " name="description" id="description" value="{{$issue->description}}"/>
 
                                     <div class=" w-100  align-self-center mb-3">
                                        <x-c-input class="col-4" type="file" label="Image : " name="thumbnail" id="thumbnail" value="{{old('thumbnail')}}"/>
                                        <div class="col-2 d-flex justify-content-center align-self-center px-2 w-fit border rounded-md">
-                                           <img  width="100" src="{{asset('storage/' . $type->thumbnail)}}" alt="Logo-{{$type->name}}">
+                                           <img  width="100" src="{{asset('storage/' . $issue->thumbnail)}}" alt="Logo-{{$issue->name}}">
                                        </div>
                                     </div>
 

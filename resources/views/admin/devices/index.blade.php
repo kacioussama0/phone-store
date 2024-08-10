@@ -6,12 +6,19 @@
 @extends('layout',['html_tag_data'=>$html_tag_data, 'title'=>$title, 'description'=>$description])
 
 @section('css')
+    <link rel="stylesheet" href="{{asset('css/vendor/select2.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/vendor/select2-bootstrap4.min.css')}}" />
 @endsection
 
 @section('js_vendor')
+    <script src="{{asset('js/vendor/select2.full.min.js')}}"></script>
 @endsection
 
 @section('js_page')
+    <script>
+        jQuery('#select2Basic').select2({placeholder: ''});
+    </script>
+
 @endsection
 
 @section('content')
@@ -54,6 +61,18 @@
 
 
                                <x-c-input type="file" label="Image : " name="thumbnail" id="thumbnail" value="{{old('thumbnail')}}"/>
+
+
+                               <div class="w-100">
+                                   <label class="form-label">Pannes</label>
+                                   <select id="select2Basic" name="issues[]" multiple>
+                                       <option label="&nbsp;"></option>
+                                       @foreach($issues as $issue)
+                                           <option value="{{$issue->id}}">{{$issue->name}}</option>
+                                       @endforeach
+                                   </select>
+                               </div>
+
 
                                 <div class="mb-3">
                                     <label for="brand_id" class="form-label">

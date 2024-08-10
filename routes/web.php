@@ -10,7 +10,10 @@ Route::prefix('appointments')->group(function () {
     Route::get('/brand-type',[App\Http\Controllers\SiteController::class,'brandType']);
     Route::get('/brand-type/{brandId}',[App\Http\Controllers\SiteController::class,'deviceType']);
     Route::get('/brand-type/{brandId}/device-type/{typeId}',[App\Http\Controllers\SiteController::class,'deviceModel']);
-
+    Route::get('/brand-type/{brandId}/device-type/{typeId}/device-model/{modelId}',[App\Http\Controllers\SiteController::class,'issues']);
+    Route::get('/brand-type/{brandId}/device-type/{typeId}/device-model/{modelId}/issues/{issueIds}',[App\Http\Controllers\SiteController::class,'contact']);
+    Route::post('/brand-type/{brandId}/device-type/{typeId}/device-model/{modelId}/issues/{issueIds}',[App\Http\Controllers\SiteController::class,'send'])->name('send-app');
+    Route::get('confirmation/{token}',[App\Http\Controllers\SiteController::class,'confirmation']);
 });
 
 

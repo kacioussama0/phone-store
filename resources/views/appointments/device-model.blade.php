@@ -24,7 +24,7 @@
             @foreach($devices as $device)
                 <div class="phone-cards">
                     <a
-                        href="#"
+                        href="{{url('appointments/brand-type/' . $brandId . '/device-type/' . $typeId . '/device-model/' . $device->id)}}"
                         aria-label=""
                         title=""
                     >

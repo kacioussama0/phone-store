@@ -12,24 +12,29 @@ class IssueController extends Controller
      */
     public function index()
     {
-           $issues = Issue::paginate(16);
+       $issues = Issue::paginate(16);
        return view('admin.issues.index', compact('issues'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'slug' => 'required|unique:brands|max:255',
+            'description' => 'nullable|max:255',
+            'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        if($request->hasFile('thumbnail')){
+            $validatedData['thumbnail'] = $request->file('thumbnail')->store('images/issues','public');
+        }
+
+        if(Issue::create($validatedData)) {
+            return redirect()->route('issues.index')->with('success','Panne créée avec succès.');
+        }
+
+        abort(500);
     }
 
     /**
@@ -45,7 +50,7 @@ class IssueController extends Controller
      */
     public function edit(Issue $issue)
     {
-        //
+        return view('admin.issues.edit', compact('issue'));
     }
 
     /**
@@ -53,7 +58,23 @@ class IssueController extends Controller
      */
     public function update(Request $request, Issue $issue)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'slug' => 'required|unique:brands|max:255',
+            'description' => 'nullable|max:255',
+            'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'enabled' => 'nullable'
+        ]);
+
+        if($request->hasFile('thumbnail')){
+            $validatedData['thumbnail'] = $request->file('thumbnail')->store('issues/types','public');
+        }
+
+        if($issue->update($validatedData)) {
+            return redirect()->route('issues.index')->with('success','Panne Editer avec succès.');
+        }
+
+        abort(500);
     }
 
     /**
@@ -61,6 +82,9 @@ class IssueController extends Controller
      */
     public function destroy(Issue $issue)
     {
-        //
+        if($issue->delete()) {
+            return redirect()->route('issues.index')->with('success','Panne Supprimer avec succès.');
+        }
+        abort(500);
     }
 }

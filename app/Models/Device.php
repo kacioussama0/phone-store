@@ -23,10 +23,16 @@ class Device extends Model
         return $this->belongsTo(Type::class,'type_id');
     }
 
+    public function issues(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Issue::class,'device_issues','device_id','issue_id');
+    }
+
 
    public function getTypeAttribute() {
         return $this->device_type->name;
-    }
+   }
+
 
 
 }

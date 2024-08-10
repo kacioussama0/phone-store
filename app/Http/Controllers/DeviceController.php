@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Brand;
 use App\Models\Device;
+use App\Models\Issue;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
@@ -17,12 +18,13 @@ class DeviceController extends Controller
     {
         $brands = Brand::where('enabled', 1)->OrderBy('name','ASC')->get();
         $devices = Device::orderBy('updated_at', 'desc')->paginate(16);
+        $issues = Issue::orderBy('name')->get();
 
         if($request->has('id') && !empty($request->get('id'))) {
             $devices = Device::where('brand_id',$request->get('id'))->orderBy('updated_at', 'desc')->paginate(16);
         }
 
-        return view('admin.devices.index', compact('devices', 'brands'));
+        return view('admin.devices.index', compact('devices', 'brands','issues'));
 
     }
 
@@ -33,13 +35,15 @@ class DeviceController extends Controller
      */
     public function store(Request $request)
     {
+
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'slug' => 'required|unique:devices|max:255',
             'description' => 'nullable|max:255',
             'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'enabled' => 'nullable',
-            'brand_id' => 'required|integer'
+            'brand_id' => 'required|integer',
+            'issues' => 'nullable|array',
         ]);
 
 
@@ -47,9 +51,19 @@ class DeviceController extends Controller
             $validatedData['thumbnail'] = $request->file('thumbnail')->store('images/devices','public');
         }
 
-        if(Device::create($validatedData)) {
+
+        $created = Device::create($validatedData);
+
+        if($created) {
+
+            if(!empty($validatedData['issues'])) {
+                $created->issues()->sync($validatedData['issues']);
+            }
+
             return redirect()->route('devices.index')->with('success','Appareil créée avec succès.');
         }
+
+
 
         abort(500);
     }
@@ -67,8 +81,9 @@ class DeviceController extends Controller
      */
     public function edit(Device $device)
     {
+        $issues = Issue::orderBy('name')->get();
         $brands = Brand::where('enabled', 1)->OrderBy('name','ASC')->get();
-        return view('admin.devices.edit', compact('device', 'brands'));
+        return view('admin.devices.edit', compact('device', 'brands','issues'));
     }
 
     /**
@@ -82,7 +97,8 @@ class DeviceController extends Controller
             'description' => 'nullable|max:255',
             'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'enabled' => 'nullable',
-            'brand_id' => 'required|integer'
+            'brand_id' => 'required|integer',
+            'issues' => 'nullable|array',
         ]);
 
 
@@ -90,9 +106,18 @@ class DeviceController extends Controller
             $validatedData['thumbnail'] = $request->file('thumbnail')->store('images/devices','public');
         }
 
-        if($device->update($validatedData)) {
+        $updated = $device->update($validatedData);
+
+        if($updated) {
+
+            if(!empty($validatedData['issues'])) {
+                $device->issues()->sync($validatedData['issues']);
+            }
+
             return redirect()->route('devices.index')->with('success','Appareil editer avec succès.');
         }
+
+
 
         abort(500);
     }

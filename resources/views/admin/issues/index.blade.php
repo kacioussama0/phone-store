@@ -44,7 +44,7 @@
                    <h2 class="small-title">Ajout Une panne</h2>
                    <div class="card">
                        <div class="card-body">
-                           <form method="POST" action="{{route('types.store')}}" enctype="multipart/form-data">
+                           <form method="POST" action="{{route('issues.store')}}" enctype="multipart/form-data">
 
                                @csrf
 
@@ -109,11 +109,11 @@
 
                             <td>
                                 <div class="btn-group gap-1" role="group" aria-label="Basic example">
-                                    <a href="{{route('types.edit',$issue->id)}}" class="btn rounded-sm btn-secondary"><i class="bi bi-pencil-square"></i></a>
-                                    <button type="submit" form="delete-type-{{$issue->id}}" class="btn rounded-sm btn-primary"><i class="bi bi-trash-fill"></i></button>
+                                    <a href="{{route('issues.edit',$issue->id)}}" class="btn rounded-sm btn-secondary"><i class="bi bi-pencil-square"></i></a>
+                                    <button type="submit" form="delete-issue-{{$issue->id}}" class="btn rounded-sm btn-primary"><i class="bi bi-trash-fill"></i></button>
                                 </div>
 
-                                <form action="{{route('types.destroy',$issue->id)}}" id="delete-type-{{$issue->id}}"  method="POST" onsubmit="return confirm('es-tu sûr ?')">
+                                <form action="{{route('issues.destroy',$issue->id)}}" id="delete-issue-{{$issue->id}}"  method="POST" onsubmit="return confirm('es-tu sûr ?')">
                                     @csrf
                                     @method('DELETE')
                                 </form>
