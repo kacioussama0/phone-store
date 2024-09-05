@@ -6,281 +6,275 @@
 
 <!-- landing page starts -->
 <main
-    class="container grid-wrapper xl:mt-48 px-4 items-center h-[90dvh] 2xl:h-[60dvh] mx-auto"
-    id="main-container"
->
-    <div
-        class="self-start w-full h-32 col-start-1 col-end-13 row-start-2 md:hidden bg-gradient-to-r from-fuchsia-500 to-rose-500 rounded-xl"
-    ></div>
-    <div
-        class="col-start-1 col-end-12 mt-9 md:mt-0 md:col-start-1 grid-cols-subgrid md:col-end-7 row-span-full"
+      class="container grid items-center justify-between grid-rows-1 px-4 mx-auto mt-28 gap-9 md:grid-cols-2 md:px-0 xl:mt-48"
+      id="main-container"
     >
+    
+      <div class="col-start-1 mt-9 md:mt-0">
         <h1
-            class="col-span-8 font-semibold mb-8 text-4xl uppercase md:text-[2.75rem] md:leading-snug lg:text-6xl"
+          class="col-span-8 mb-8 text-4xl font-semibold uppercase md:text-[2.75rem] md:leading-snug lg:text-6xl"
         >
-            On répare TOUT <br />pour vous
+          On répare TOUT <br />pour vous
         </h1>
-        <p class="text-neutral-500 lg:text-xl !leading-normal xl:w-9/12">
-            Smartphone ou tablette, notre équipe prend en charge toutes les pannes
-            de vos appareils et intervient avec nos ateliers mobiles à l’endroit
-            de votre choix.
+        <p class="!leading-normal text-neutral-500 lg:text-xl xl:w-9/12">
+          Smartphone ou tablette, notre équipe prend en charge toutes les pannes
+          de vos appareils et intervient avec nos ateliers mobiles à l’endroit
+          de votre choix.
         </p>
         <div class="flex gap-4 mt-8 mb-4">
-            <div
-                class="flex justify-end sm:justify-start lg:justify-end xl:justify-start -space-x-1.5"
-            >
-                <img
-                    class="object-cover object-top w-6 h-6 rounded-full bg-slate-100 ring-2 ring-white"
-                    loading="lazy"
-                    src="https://images.pexels.com/photos/6801642/pexels-photo-6801642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    alt=""
-                />
-                <img
-                    class="object-cover object-top w-6 h-6 rounded-full bg-slate-100 ring-2 ring-white"
-                    loading="lazy"
-                    src="https://images.pexels.com/photos/6801642/pexels-photo-6801642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    alt=""
-                />
-                <img
-                    class="object-cover object-top w-6 h-6 rounded-full bg-slate-100 ring-2 ring-white"
-                    loading="lazy"
-                    src="https://images.pexels.com/photos/6801642/pexels-photo-6801642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    alt=""
-                />
-                <img
-                    class="object-cover object-top w-6 h-6 rounded-full bg-slate-100 ring-2 ring-white"
-                    loading="lazy"
-                    src="https://images.pexels.com/photos/6801642/pexels-photo-6801642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    alt=""
-                />
-                <img
-                    class="object-cover object-top w-6 h-6 rounded-full bg-slate-100 ring-2 ring-white"
-                    loading="lazy"
-                    src="https://images.pexels.com/photos/6801642/pexels-photo-6801642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    alt=""
-                />
-            </div>
-            <div class="flex items-center gap-2 font-bold">
+          <div
+            class="flex justify-end -space-x-1.5 sm:justify-start lg:justify-end xl:justify-start"
+          >
+            <img
+              class="object-cover object-top w-6 h-6 rounded-full bg-slate-100 ring-2 ring-white"
+              loading="lazy"
+              src="https://images.pexels.com/photos/6801642/pexels-photo-6801642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt=""
+            />
+            <img
+              class="object-cover object-top w-6 h-6 rounded-full bg-slate-100 ring-2 ring-white"
+              loading="lazy"
+              src="https://images.pexels.com/photos/6801642/pexels-photo-6801642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt=""
+            />
+            <img
+              class="object-cover object-top w-6 h-6 rounded-full bg-slate-100 ring-2 ring-white"
+              loading="lazy"
+              src="https://images.pexels.com/photos/6801642/pexels-photo-6801642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt=""
+            />
+            <img
+              class="object-cover object-top w-6 h-6 rounded-full bg-slate-100 ring-2 ring-white"
+              loading="lazy"
+              src="https://images.pexels.com/photos/6801642/pexels-photo-6801642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt=""
+            />
+            <img
+              class="object-cover object-top w-6 h-6 rounded-full bg-slate-100 ring-2 ring-white"
+              loading="lazy"
+              src="https://images.pexels.com/photos/6801642/pexels-photo-6801642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt=""
+            />
+          </div>
+          <div class="flex items-center gap-2 font-bold">
             <span>5 Rating on</span
             ><img
-                    class="size-6"
-                    loading="lazy"
-                    src="./assets/images/phone-brands/google.svg"
-                    alt="rating on google"
-                />
-            </div>
+              class="size-6"
+              loading="lazy"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png"
+              alt="rating on google"
+            />
+          </div>
         </div>
         <a class="flex items-center" href="/device-type.html">
-            <button class="btn lg:w-fit">
-                <span> Prendre rendez-vous </span>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                >
-                    <path d="m9 18 6-6-6-6" />
-                </svg>
-            </button>
+          <button class="btn lg:w-fit">
+            <span> Prendre rendez-vous </span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </button>
         </a>
-    </div>
-
-    <img
-        class="hidden xl:self-start col-end-12 md:row-start-6 xl:row-start-7 row-end-11 md:col-start-10 xl:w-[13rem] xl:col-start-9 md:block follow-mouse"
-        src="./assets/images/landing-page/apple-watch.webp"
-        alt="apple-watch"
-        loading="lazy"
-    />
-    <img
-        class="z-20 hidden row-start-4 lg:block lg:col-end-10 lg:row-end-6 lg:col-start-7 size-32 follow-mouse"
-        src="./assets/images/landing-page/airpodsMax.webp"
-        alt="airpodsMax"
-        loading="lazy"
-    />
-    <img
-        class="z-10 hidden object-cover object-center col-start-7 col-end-13 row-end-7 xl:w-[450px] md:row-start-4 md:block follow-mouse"
-        src="./assets/images/landing-page/macBook-Air.webp"
-        alt="laptop macBook-Air"
-        loading="lazy"
-    />
-    <img
-        class="hidden col-start-7 xl:col-start-6 self-baseline w-28 lg:row-end-auto lg:row-start-6 lg:self-end xl:row-start-6 md:row-start-5 md:row-end-6 md:block follow-mouse"
-        src="./assets/images/landing-page/iphone.webp"
-        alt="iphone 15"
-        loading="lazy"
-    />
-    <div
-        class="absolute xl:hidden hidden md:block size-64 blur-3xl opacity-20 rounded-full z-10 top-[35%] right-[10%] bg-gradient-to-r from-fuchsia-500 to-rose-500"
-    ></div>
+      </div>
+      <div class="grid">
+        <img
+          class="hidden col-end-12 follow-mouse row-end-11 md:col-start-10 md:block md:w-44 md:self-end xl:col-start-9 xl:row-start-7 xl:w-52 xl:self-start"
+          src="./assets/images/landing-page/apple-watch.webp"
+          alt="apple-watch"
+          loading="lazy"
+        />
+        <!-- <img
+          class="z-20 hidden row-start-4 follow-mouse size-32 lg:col-start-7 lg:col-end-10 lg:row-end-6 lg:block"
+          src="./assets/images/landing-page/airpodsMax.webp"
+          alt="airpodsMax"
+          loading="lazy"
+        /> -->
+        <img
+          class="self-end hidden object-cover object-center col-start-8 col-end-13 row-end-7 follow-mouse size-full md:row-start-4 md:block"
+          src="./assets/images/landing-page/macBook-Air.webp"
+          alt="laptop macBook-Air"
+          loading="lazy"
+        />
+        <img
+          class="hidden col-start-7 follow-mouse w-28 self-baseline md:row-start-5 md:row-end-6 md:block lg:row-start-6 lg:row-end-auto lg:self-end xl:col-start-6 xl:row-start-6"
+          src="./assets/images/landing-page/iphone.webp"
+          alt="iphone 15"
+          loading="lazy"
+        />
+      </div>
 </main>
 <!-- landing page ends -->
 
 <!-- carousel starts -->
+
 <div
-    class="container mx-auto swiper-container"
+    class="container px-4 mx-auto mt-28 xl:mt-48 swiper-container"
     role="region"
-    aria-label="Product Carousel"
->
-    <div>
+    aria-label="Product Carousel">
+      <div>
         <div class="flex flex-col w-full md:justify-between">
-            <h1 class="text-5xl font-bold uppercase md:text-6xl">nous service</h1>
+          <h1 class="text-5xl font-bold uppercase md:text-6xl">nous service</h1>
         </div>
-    </div>
-    <div class="py-40 swiper-wrapper">
+      </div>
+      <div class="py-20 swiper-wrapper">
         <div class="items-center px-4 bg-white swiper-slide" lazy="true">
-            <div class="grid items-center grid-cols-1 gap-10 md:grid-cols-2">
-                <div>
-                    <img
-                        src="./assets/images/landing-page/iphone.webp"
-                        class="h-48 mx-auto md:min-h-72"
-                        loading="lazy"
-                        alt="iPhone"
-                    />
-                </div>
-                <div class="grid grid-flow-row-dense md:items-stretch gap-7">
-                    <h2
-                        class="items-stretch mb-8 text-4xl font-bold capitalize md:text-6xl md:self-end"
-                    >
-                        iPhone
-                    </h2>
-                    <p class="md:text-xl text-neutral-500 lg:w-9/12">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                        accusantium commodi debitis voluptates magnam repellat,
-                        molestiae ex, minima rerum soluta fugit facere asperiores illo.
-                    </p>
-                    <button
-                        class="md:self-start md:w-fit btn"
-                        aria-label="Repair my iPhone"
-                    >
-                        Repair my iPhone
-                    </button>
-                </div>
+          <div class="grid items-center grid-cols-1 gap-10 md:grid-cols-2">
+            <div>
+              <img
+                src="./assets/images/landing-page/iphone.webp"
+                class="h-48 mx-auto md:min-h-72"
+                loading="lazy"
+                alt="iPhone"
+              />
             </div>
-        </div>
-        <div class="items-center px-4 bg-white swiper-slide" lazy="true">
-            <div class="grid items-center grid-cols-1 gap-10 md:grid-cols-2">
-                <div>
-                    <img
-                        src="./assets/images/landing-page/macBook-Air.webp"
-                        class="h-48 mx-auto md:min-h-72"
-                        loading="lazy"
-                        alt="laptop"
-                    />
-                </div>
-                <div class="grid grid-flow-row-dense md:items-stretch gap-7">
-                    <h2
-                        class="items-stretch mb-8 text-4xl font-bold capitalize md:text-6xl md:self-end"
-                    >
-                        laptop
-                    </h2>
-                    <p class="md:text-xl text-neutral-500 lg:w-9/12">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                        accusantium commodi debitis voluptates magnam repellat,
-                        molestiae ex, minima rerum soluta fugit facere asperiores illo.
-                    </p>
-                    <button
-                        class="md:self-start md:w-fit btn"
-                        aria-label="Repair my laptop"
-                    >
-                        Repair my laptop
-                    </button>
-                </div>
+            <div class="grid grid-flow-row-dense md:items-stretch gap-7">
+              <h2
+                class="items-stretch mb-8 text-4xl font-bold capitalize md:text-6xl md:self-end"
+              >
+                iPhone
+              </h2>
+              <p class="md:text-xl text-neutral-500 lg:w-9/12">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+                accusantium commodi debitis voluptates magnam repellat,
+                molestiae ex, minima rerum soluta fugit facere asperiores illo.
+              </p>
+              <button
+                class="md:self-start md:w-fit btn"
+                aria-label="Repair my iPhone"
+              >
+                Repair my iPhone
+              </button>
             </div>
+          </div>
         </div>
         <div class="items-center px-4 bg-white swiper-slide" lazy="true">
-            <div class="grid items-center grid-cols-1 gap-10 md:grid-cols-2">
-                <div>
-                    <img
-                        src="./assets/images/landing-page/IPAD PRO.webp"
-                        class="h-48 mx-auto md:min-h-72"
-                        loading="lazy"
-                        alt="laptop"
-                    />
-                </div>
-                <div class="grid grid-flow-row-dense md:items-stretch gap-7">
-                    <h2
-                        class="items-stretch mb-8 text-4xl font-bold capitalize md:text-6xl md:self-end"
-                    >
-                        IPAD
-                    </h2>
-                    <p class="md:text-xl text-neutral-500 lg:w-9/12">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                        accusantium commodi debitis voluptates magnam repellat,
-                        molestiae ex, minima rerum soluta fugit facere asperiores illo.
-                    </p>
-                    <button
-                        class="md:self-start md:w-fit btn"
-                        aria-label="Repair my IPAD"
-                    >
-                        Repair my IPAD
-                    </button>
-                </div>
+          <div class="grid items-center grid-cols-1 gap-10 md:grid-cols-2">
+            <div>
+              <img
+                src="./assets/images/landing-page/macBook-Air.webp"
+                class="h-48 mx-auto md:min-h-72"
+                loading="lazy"
+                alt="laptop"
+              />
             </div>
+            <div class="grid grid-flow-row-dense md:items-stretch gap-7">
+              <h2
+                class="items-stretch mb-8 text-4xl font-bold capitalize md:text-6xl md:self-end"
+              >
+                laptop
+              </h2>
+              <p class="md:text-xl text-neutral-500 lg:w-9/12">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+                accusantium commodi debitis voluptates magnam repellat,
+                molestiae ex, minima rerum soluta fugit facere asperiores illo.
+              </p>
+              <button
+                class="md:self-start md:w-fit btn"
+                aria-label="Repair my laptop"
+              >
+                Repair my laptop
+              </button>
+            </div>
+          </div>
         </div>
         <div class="items-center px-4 bg-white swiper-slide" lazy="true">
-            <div class="grid items-center grid-cols-1 gap-10 md:grid-cols-2">
-                <div>
-                    <img
-                        src="./assets/images/landing-page/Controller-XL@2x.webp"
-                        class="h-48 mx-auto rotate-[15deg] md:min-h-72"
-                        loading="lazy"
-                        alt="console"
-                    />
-                </div>
-                <div class="grid grid-flow-row-dense md:items-stretch gap-7">
-                    <h2
-                        class="items-stretch mb-8 text-4xl font-bold capitalize md:text-6xl md:self-end"
-                    >
-                        console
-                    </h2>
-                    <p class="md:text-xl text-neutral-500 lg:w-9/12">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                        accusantium commodi debitis voluptates magnam repellat,
-                        molestiae ex, minima rerum soluta fugit facere asperiores illo.
-                    </p>
-                    <button
-                        class="md:self-start md:w-fit btn"
-                        aria-label="Repair my console"
-                    >
-                        Repair my conosle
-                    </button>
-                </div>
+          <div class="grid items-center grid-cols-1 gap-10 md:grid-cols-2">
+            <div>
+              <img
+                src="./assets/images/landing-page/IPAD PRO.webp"
+                class="h-48 mx-auto md:min-h-72"
+                loading="lazy"
+                alt="laptop"
+              />
             </div>
+            <div class="grid grid-flow-row-dense md:items-stretch gap-7">
+              <h2
+                class="items-stretch mb-8 text-4xl font-bold capitalize md:text-6xl md:self-end"
+              >
+                IPAD
+              </h2>
+              <p class="md:text-xl text-neutral-500 lg:w-9/12">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+                accusantium commodi debitis voluptates magnam repellat,
+                molestiae ex, minima rerum soluta fugit facere asperiores illo.
+              </p>
+              <button
+                class="md:self-start md:w-fit btn"
+                aria-label="Repair my IPAD"
+              >
+                Repair my IPAD
+              </button>
+            </div>
+          </div>
         </div>
         <div class="items-center px-4 bg-white swiper-slide" lazy="true">
-            <div class="grid items-center grid-cols-1 gap-10 md:grid-cols-2">
-                <div>
-                    <img
-                        src="./assets/images/landing-page/Controller-XL@2x.webp"
-                        class="h-48 mx-auto rotate-[15deg] md:min-h-72"
-                        loading="lazy"
-                        alt="usb stick"
-                    />
-                </div>
-                <div class="grid grid-flow-row-dense md:items-stretch gap-7">
-                    <h2
-                        class="items-stretch mb-8 text-4xl font-bold capitalize md:text-6xl md:self-end"
-                    >
-                        Data recovery
-                    </h2>
-                    <p class="md:text-xl text-neutral-500 lg:w-9/12">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                        accusantium commodi debitis voluptates magnam repellat,
-                        molestiae ex, minima rerum soluta fugit facere asperiores illo.
-                    </p>
-                    <button
-                        class="md:self-start md:w-fit btn"
-                        aria-label="Repair my console"
-                    >
-                        recover my Data
-                    </button>
-                </div>
+          <div class="grid items-center grid-cols-1 gap-10 md:grid-cols-2">
+            <div>
+              <img
+                src="./assets/images/landing-page/Controller-XL@2x.webp"
+                class="h-48 mx-auto rotate-[15deg] md:min-h-72"
+                loading="lazy"
+                alt="console"
+              />
             </div>
+            <div class="grid grid-flow-row-dense md:items-stretch gap-7">
+              <h2
+                class="items-stretch mb-8 text-4xl font-bold capitalize md:text-6xl md:self-end"
+              >
+                console
+              </h2>
+              <p class="md:text-xl text-neutral-500 lg:w-9/12">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+                accusantium commodi debitis voluptates magnam repellat,
+                molestiae ex, minima rerum soluta fugit facere asperiores illo.
+              </p>
+              <button
+                class="md:self-start md:w-fit btn"
+                aria-label="Repair my console"
+              >
+                Repair my conosle
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="items-center px-4 bg-white swiper-slide" lazy="true">
+          <div class="grid items-center grid-cols-1 gap-10 md:grid-cols-2">
+            <div>
+              <img
+                src="./assets/images/landing-page/Controller-XL@2x.webp"
+                class="h-48 mx-auto rotate-[15deg] md:min-h-72"
+                loading="lazy"
+                alt="usb stick"
+              />
+            </div>
+            <div class="grid grid-flow-row-dense md:items-stretch gap-7">
+              <h2
+                class="items-stretch mb-8 text-4xl font-bold capitalize md:text-6xl md:self-end"
+              >
+                Data recovery
+              </h2>
+              <p class="md:text-xl text-neutral-500 lg:w-9/12">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+                accusantium commodi debitis voluptates magnam repellat,
+                molestiae ex, minima rerum soluta fugit facere asperiores illo.
+              </p>
+              <button
+                class="md:self-start md:w-fit btn"
+                aria-label="Repair my console"
+              >
+                recover my Data
+              </button>
+            </div>
+          </div>
         </div>
         <div class="swiper-pagination" aria-hidden="true"></div>
         <div class="swiper-button-next" aria-label="Next slide"></div>
@@ -676,9 +670,210 @@
     </div>
 </main>
 <!-- statistic ends -->
+<!-- partners starts -->
+    <div class="mx-auto my-28">
+      <div class="container px-4" px-4>
+        <h1 class="mb-8 text-4xl font-bold uppercase md:text-6xl">
+          nous partenaire
+        </h1>
+      </div>
+      <div class="flex items-center w-full h-40 overflow-hidden border marquee">
+        <img
+          class="object-cover object-top rounded-md bg-slate-100 ring-2 ring-white"
+          loading="lazy"
+          src="https://images.pexels.com/photos/6801642/pexels-photo-6801642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt=""
+        />
+        *
+        <img
+          class="object-cover object-top rounded-md bg-slate-100 ring-2 ring-white"
+          loading="lazy"
+          src="https://images.pexels.com/photos/6801642/pexels-photo-6801642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt=""
+        />
+        *
+        <img
+          class="object-cover object-top rounded-md bg-slate-100 ring-2 ring-white"
+          loading="lazy"
+          src="https://images.pexels.com/photos/6801642/pexels-photo-6801642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt=""
+        />
+        *
+        <img
+          class="object-cover object-top rounded-md bg-slate-100 ring-2 ring-white"
+          loading="lazy"
+          src="https://images.pexels.com/photos/6801642/pexels-photo-6801642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt=""
+        />
+      </div>
+    </div>
+    <!-- partners ends -->
 
-<!-- google reviews starts -->
-<div id="google-reviews"></div>
-<!-- google reviews ends-->
+    <!-- testimonails starts -->
+    <div class="container px-4 mx-auto my-28">
+      <h1 class="w-full mb-8 text-4xl font-black uppercase md:hidden">
+        testimonails
+      </h1>
+      <div class="relative overflow-hidden md:overflow-visible">
+        <h1
+          class="absolute hidden font-black uppercase w-fit md:block md:text-7xl md:right-[15%] md:top-1/2 -z-50 lg:right-[29%]"
+        >
+          testimonails
+        </h1>
+        <div class="w-56 mx-auto swiper-testimonials h-80 lg:w-72 lg:h-96">
+          <div class="swiper-wrapper">
+            <div
+              class="swiper-slide !grid gap-y-6 rounded-md border border-neutral-900 bg-white p-4 text-gray-600"
+            >
+              <div>
+                <p id="review-text">
+                  Great product! Really satisfied.Great product! Really
+                  satisfied.mat product! Really satisfied.at product! Really
+                  satisfied.at
+                </p>
+              </div>
+              <div class="self-end border-t border-neutral-700">
+                <h3
+                  id="reviewer-name"
+                  class="mt-4 text-xl font-semibold uppercase text-neutral-800"
+                >
+                  John Doe
+                </h3>
+              </div>
+            </div>
+            <div
+              class="swiper-slide !grid gap-y-6 rounded-md border border-neutral-900 bg-white p-4 text-gray-600"
+            >
+              <div>
+                <p id="review-text">
+                  Great product! Really satisfied.Great product! Really
+                  satisfied.mat product! Really satisfied.at product! Really
+                  satisfied.at
+                </p>
+              </div>
+              <div class="self-end border-t border-neutral-700">
+                <h3
+                  id="reviewer-name"
+                  class="mt-4 text-xl font-semibold uppercase text-neutral-800"
+                >
+                  John Doe
+                </h3>
+              </div>
+            </div>
+            <div
+              class="swiper-slide z-50 !grid gap-y-6 rounded-md border border-neutral-900 bg-white p-4 text-gray-600"
+            >
+              <div>
+                <p id="review-text">
+                  Great product! Really satisfied.Great product! Really
+                  satisfied.mat product! Really satisfied.at product! Really
+                  satisfied.at
+                </p>
+              </div>
+              <div class="self-end border-t border-neutral-700">
+                <h3
+                  id="reviewer-name"
+                  class="mt-4 text-xl font-semibold uppercase text-neutral-800"
+                >
+                  John Doe
+                </h3>
+              </div>
+            </div>
+            <div
+              class="swiper-slide z-50 !grid gap-y-6 rounded-md border border-neutral-900 bg-white p-4 text-gray-600"
+            >
+              <div>
+                <p id="review-text">
+                  Great product! Really satisfied.Great product! Really
+                  satisfied.mat product! Really satisfied.at product! Really
+                  satisfied.at
+                </p>
+              </div>
+              <div class="self-end border-t border-neutral-700">
+                <h3
+                  id="reviewer-name"
+                  class="mt-4 text-xl font-semibold uppercase text-neutral-800"
+                >
+                  John Doe
+                </h3>
+              </div>
+            </div>
+            <div
+              class="swiper-slide z-20 !grid gap-y-6 rounded-md border border-neutral-900 bg-white p-4 text-gray-600"
+            >
+              <div>
+                <p id="review-text">
+                  Great product! Really satisfied.Great product! Really
+                  satisfied.mat product! Really satisfied.at product! Really
+                  satisfied.at
+                </p>
+              </div>
+              <div class="self-end border-t border-neutral-700">
+                <h3
+                  id="reviewer-name"
+                  class="mt-4 text-xl font-semibold uppercase text-neutral-800"
+                >
+                  John Doe
+                </h3>
+              </div>
+            </div>
+            <div
+              class="swiper-slide z-20 !grid gap-y-6 rounded-md border border-neutral-900 bg-white p-4 text-gray-600"
+            >
+              <div>
+                <p id="review-text">
+                  Great product! Really satisfied.Great product! Really
+                  satisfied.mat product! Really satisfied.at product! Really
+                  satisfied.at
+                </p>
+              </div>
+              <div class="self-end border-t border-neutral-700">
+                <h3
+                  id="reviewer-name"
+                  class="mt-4 text-xl font-semibold uppercase text-neutral-800"
+                >
+                  John Doe
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="absolute !top-[90%] right-14 !text-sm rotate-[45deg] button-next"
+          aria-label="Next slide"
+        >  <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m9 18 6-6-6-6" />
+            </svg></div>
+        <div
+          class="absolute !top-[90%]  rotate-[46deg] button-prev"
+          aria-label="Previous slide"
+        >  <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+        </div>
+      </div>
+    </div>
+    <!-- testimonails ends -->
+    
 
 @endsection

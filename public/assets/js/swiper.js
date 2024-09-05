@@ -1,34 +1,57 @@
+//our services swiper
 document.addEventListener("DOMContentLoaded", function () {
-  const swiper = new Swiper(".swiper-container", {
-    // Optional parameters
-    effect: "fade",
-    grabCursor: true,
+    const swiper = new Swiper(".swiper-container", {
+        effect: "fade",
+        grabCursor: true,
 
-    allowTouchMove: true,
-    keyboard: {
-      enabled: true,
-      onlyInViewport: false,
-    },
+        allowTouchMove: true,
+        keyboard: {
+            enabled: true,
+            onlyInViewport: false,
+        },
 
-    loop: true,
+        loop: true,
 
-    slidesPerView: 1,
+        slidesPerView: 1,
 
-    // If we need pagination
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
 
-    // Navigation arrows
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
 
-    // And if we need scrollbar
-    scrollbar: {
-      el: ".swiper-scrollbar",
-    },
-  });
+        scrollbar: {
+            el: ".swiper-scrollbar",
+        },
+    });
+});
+
+//testimonials swiper
+document.addEventListener("DOMContentLoaded", function () {
+    const swiper = new Swiper(".swiper-testimonials", {
+        effect: "cards",
+        grabCursor: true,
+        speed: 500,
+        rotate: true,
+
+        allowTouchMove: true,
+        keyboard: {
+            enabled: true,
+            onlyInViewport: false,
+        },
+
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+
+        navigation: {
+            nextEl: ".button-next",
+            prevEl: ".button-prev",
+        },
+    });
 });
