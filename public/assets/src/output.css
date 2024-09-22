@@ -2381,3 +2381,72 @@ html {
         align-self: flex-start;
     }
 }
+
+.p-2 {
+    padding: 0.5rem;
+}
+
+.left-\[2\%\] {
+    left: 2%;
+}
+.right-\[2\%\] {
+    right: 2%;
+}
+
+.rotate-180 {
+    --tw-rotate: 180deg;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+        rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+        scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.bg-fuchsia-800 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(134 25 143 / var(--tw-bg-opacity));
+}
+
+.border-fuchsia-800 {
+    --tw-border-opacity: 1;
+    border-color: rgb(134 25 143 / var(--tw-border-opacity));
+}
+.bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.stroke-fuchsia-800 {
+    stroke: #86198f;
+}
+.w-40 {
+    width: 10rem;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+.left-\[15\%\] {
+    left: 15%;
+}
+
+.right-\[15\%\] {
+    right: 15%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.js-marquee {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-button-next::after {
+    content: "";
+}
+
+.swiper-button-prev::after {
+    content: "";
+}

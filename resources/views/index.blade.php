@@ -66,7 +66,7 @@
             />
           </div>
         </div>
-        <a class="flex items-center" href="/device-type.html">
+        <a class="flex items-center" href="appointments/brand-type">
           <button class="btn lg:w-fit">
             <span> Prendre rendez-vous </span>
             <svg
@@ -122,7 +122,7 @@
     aria-label="Product Carousel">
       <div>
         <div class="flex flex-col w-full md:justify-between">
-          <h1 class="text-5xl font-bold uppercase md:text-6xl">nous service</h1>
+          <h1 class="text-5xl font-bold uppercase md:text-6xl" id="services">nous service</h1>
         </div>
       </div>
       <div class="py-20 swiper-wrapper">
@@ -277,8 +277,21 @@
           </div>
         </div>
         <div class="swiper-pagination" aria-hidden="true"></div>
-        <div class="swiper-button-next" aria-label="Next slide"></div>
-        <div class="swiper-button-prev" aria-label="Previous slide"></div>
+        <div class="swiper-button-next w-fit absolute top-1/2 rounded-md border border-fuchsia-800 bg-white">
+  <button class="p-2">
+    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-fuchsia-800" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m9 18 6-6-6-6" />
+    </svg>
+  </button>
+        </div>
+        <div class="swipe-button-prev w-fit absolute top-1/2 rotate-180 rounded-md border border-fuchsia-800 bg-white">
+          <button class="p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="stroke-fuchsia-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+
     </div>
 </div>
 <!-- carousel ends -->
@@ -634,7 +647,7 @@
             alt="trophies "
         />
     </div>
-    <div class="md:order-first lg:order-none">
+    <div class="md:order-first lg:order-none" id="statistique">
         <h1 class="mb-8 text-3xl font-bold uppercase lg:text-3xl">
             Nous transformons les appareils de cassés à brillants
         </h1>
@@ -671,47 +684,33 @@
 </main>
 <!-- statistic ends -->
 <!-- partners starts -->
-    <div class="mx-auto my-28">
-      <div class="container px-4" px-4>
+    <div class="mx-auto overflow-hidden container px-4 my-28">
+      <div class="">
         <h1 class="mb-8 text-4xl font-bold uppercase md:text-6xl">
           nous partenaire
         </h1>
       </div>
-      <div class="flex items-center w-full h-40 overflow-hidden border marquee">
-        <img
-          class="object-cover object-top rounded-md bg-slate-100 ring-2 ring-white"
-          loading="lazy"
-          src="https://images.pexels.com/photos/6801642/pexels-photo-6801642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt=""
-        />
-        *
-        <img
-          class="object-cover object-top rounded-md bg-slate-100 ring-2 ring-white"
-          loading="lazy"
-          src="https://images.pexels.com/photos/6801642/pexels-photo-6801642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt=""
-        />
-        *
-        <img
-          class="object-cover object-top rounded-md bg-slate-100 ring-2 ring-white"
-          loading="lazy"
-          src="https://images.pexels.com/photos/6801642/pexels-photo-6801642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt=""
-        />
-        *
-        <img
-          class="object-cover object-top rounded-md bg-slate-100 ring-2 ring-white"
-          loading="lazy"
-          src="https://images.pexels.com/photos/6801642/pexels-photo-6801642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt=""
-        />
-      </div>
+        <div id="marquee-container" class="">
+          <div>
+            <img width="150" src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" alt="Image 1">
+          </div>
+          <div>
+            <img width="150" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Apple_Music_logo.svg" alt="Image 2">
+          </div>
+          <div>
+            <img width="150" src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Image 3">
+          </div>
+          <div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Youtube_Music_icon.svg" alt="Nike Logo" width="150"/>
+          </div>
+        </div>
+      
     </div>
     <!-- partners ends -->
 
     <!-- testimonails starts -->
-    <div class="container px-4 mx-auto my-28">
-      <h1 class="w-full mb-8 text-4xl font-black uppercase md:hidden">
+    <div class="container px-4 mx-auto my-28" id="temoignage">
+      <h1 class="w-full mb-8 text-4xl font-black uppercase md:hidden" >
         testimonails
       </h1>
       <div class="relative overflow-hidden md:overflow-visible">
@@ -839,7 +838,7 @@
           </div>
         </div>
         <div
-          class="absolute !top-[90%] right-14 !text-sm rotate-[45deg] button-next"
+          class="absolute !top-[90%] right-[15%] !text-sm rotate-[45deg] button-next"
           aria-label="Next slide"
         >  <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -855,9 +854,10 @@
               <path d="m9 18 6-6-6-6" />
             </svg></div>
         <div
-          class="absolute !top-[90%]  rotate-[46deg] button-prev"
+          class="absolute !top-[90%] left-[15%] button-prev"
           aria-label="Previous slide"
-        >  <svg
+          style="transform:rotate(132deg)">
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"

@@ -13,29 +13,31 @@
         class="flex items-center justify-between px-4 py-3 border-b border-stone-300"
     >
         <div>
-            <span class="sr-only">Logo</span>
-            <img
-                class="w-28"
-                src="{{asset('assets/images/logo/phonelab.svg')}}"
-                alt="phonelab store logo"
-            />
+            <a href="/">
+                <span class="sr-only">Logo</span>
+                <img
+                    class="w-40"
+                    src="{{asset('assets/images/logo/phonelab.svg')}}"
+                    alt="phonelab store logo"
+                />
+            </a>
         </div>
-        <div class="hidden text-stone-400 lg:block">
+        <div class="hidden text-nuetral-700 lg:block">
             <ul class="flex items-center gap-4">
                 <li
                     class="transition-all duration-200 hover:text-fuchsia-500 motion-reduce:ease-in-out"
                 >
-                    <a href="">service</a>
+                    <a href="#services">service</a>
                 </li>
                 <li
                     class="transition-all duration-200 hover:text-fuchsia-500 motion-reduce:ease-in-out"
                 >
-                    <a href="">statistique</a>
+                    <a href="#statistique">statistique</a>
                 </li>
                 <li
                     class="transition-all duration-200 hover:text-fuchsia-500 motion-reduce:ease-in-out"
                 >
-                    <a href="">temoignage</a>
+                    <a href="#temoignage">temoignage</a>
                 </li>
                 <li
                     class="transition-all duration-200 hover:text-fuchsia-500 motion-reduce:ease-in-out"
